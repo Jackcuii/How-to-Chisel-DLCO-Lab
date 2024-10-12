@@ -25,4 +25,7 @@ Trouble shooting of using Chisel in Nanjing University DLCO Lab Course.
 - 报错“实例化时未初始化为Module”的问题?  
     模块实例化的时候必须初始化为`Module`(即使是组合电路继承自`RawModule`)  
 - 增加test object后，出现sbt test无法找到的问题？  
-    test的.scala文件必须在template的test文件夹里  
+    test的.scala文件必须在template的test文件夹里
+- 明明把BlackBox的原文件放进resources文件夹了，为什么还显示找不到？
+  sbt clean 以下
+- 注意不能使用 `Y = (X.asSInt).asUInt`进行符号拓展，注意自动拓展发生的位置。
