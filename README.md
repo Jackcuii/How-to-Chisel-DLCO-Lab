@@ -29,3 +29,4 @@ Trouble shooting of using Chisel in Nanjing University DLCO Lab Course.
 - 明明把BlackBox的原文件放进resources文件夹了，为什么还显示找不到？
   sbt clean 以下
 - 注意不能使用 `Y = (X.asSInt).asUInt`进行符号拓展，注意自动拓展发生的位置。
+- 在Linux环境下，出于某种未知的原因，Verilog里的\$readmemh似乎只能使用绝对路径。
