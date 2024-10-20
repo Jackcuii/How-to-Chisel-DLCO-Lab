@@ -28,5 +28,7 @@ Trouble shooting of using Chisel in Nanjing University DLCO Lab Course.
     test的.scala文件必须在template的test文件夹里
 - 明明把BlackBox的原文件放进resources文件夹了，为什么还显示找不到？
   sbt clean 以下
-- 注意不能使用 `Y = (X.asSInt).asUInt`进行符号拓展，注意自动拓展发生的位置。
+- 注意不能使用 `Y = (X.asSInt).asUInt`进行符号拓展，注意自动拓展发生的位置是赋值的时候。
+  要想正确的利用自带拓展实现符号拓展，正确的方法是建一个新的有符号Wire变量（利用Scala的一些机制应该能压到一条语句，但没深究）
+- 莫名其妙的语法错误（明明没错）：试着重启Metal，可能只是scala metal卡死了
 - 在Linux环境下，出于某种未知的原因，Verilog里的\$readmemh似乎只能使用绝对路径。
